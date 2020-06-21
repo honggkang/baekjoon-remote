@@ -8,24 +8,28 @@
 
 //#include <iostream>
 #include <stdio.h>
-#include "DrawStar.h"
+//#include "DrawStar.h"
+#include "womenPres.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
     // std::cout << "Hello, World!\n";
-    /*
-    int a,b;
-    scanf("%d %d",&a,&b);
-    if(a>b){
-        printf(">\n");
-    }else if(a==b){
-        printf("==\n");
-    }else{
-        printf("<\n");
-    }
-    */
+    /* Drawing stars
     int N;
     scanf("%d",&N);
     DrawStar(N);
+     */
+    
+    int T;
+    scanf("%d",&T);
+    int arr[T][2]; //arr[floor #][room #]
+    for(int i=0;i<T;i++){
+        scanf("%d",&arr[i][0]);
+        scanf("%d",&arr[i][1]);
+    }
+    int Ans[T];
+    for(int i=0; i<T; i++){
+        Ans[i]=peopleNumber(arr[i][0],arr[i][1]);
+        printf("%d\n",Ans[i]);
+    }
     return 0;
 }
